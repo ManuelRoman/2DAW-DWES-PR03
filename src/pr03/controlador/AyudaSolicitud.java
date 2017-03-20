@@ -2,6 +2,7 @@ package pr03.controlador;
 
 import java.io.IOException;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,13 +15,19 @@ public class AyudaSolicitud {
 	 * La petición de la que se deducirá la acción a llevar a cabo
 	 */
 	private HttpServletRequest request;
+	
+	/**
+	 * Objeto que encapsula la información a nivel de la aplicación
+	 */
+	private ServletContext sc;
 
 	/**
 	 * Constructor, que recibe la petición para ser procesada posteriormente
 	 * @param request La petición
 	 */
-	public AyudaSolicitud(HttpServletRequest request) throws ServletException, IOException {
+	public AyudaSolicitud(HttpServletRequest request, ServletContext sc) throws ServletException, IOException {
 		this.request = request;
+		this.sc = sc;
 	}
 
 	/**
@@ -29,7 +36,8 @@ public class AyudaSolicitud {
 	 */
 	public Accion getAccion() {
 		String accion = (String) request.getParameter("accion");
-		return FactoriaAcciones.creaAccion(accion);
+		String rutaArchivo = request.getServletContext().getRealPath(request.getServletContext().getInitParameter("acciones"));
+		return FactoriaAcciones.creaAccion(accion, rutaArchivo);
 	}
 
 }

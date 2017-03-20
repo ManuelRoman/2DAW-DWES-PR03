@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
-import pr03.bbdd.DAO;
-import pr03.bbdd.BeanDAO;
 import pr03.controlador.Accion;
 import pr03.modelo.beans.BeanError;
 import pr03.modelo.beans.BeanUsuario;

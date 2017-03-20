@@ -118,7 +118,7 @@ public class Controlador extends HttpServlet {
 			// Se obtiene el objeto de ámbito sesión
 			HttpSession sesion = request.getSession();
 			// Obtener un objeto de ayuda para la solicitud
-			AyudaSolicitud ayudaSol = new AyudaSolicitud(request);
+			AyudaSolicitud ayudaSol = new AyudaSolicitud(request, sc);
 			// Crear un objeto de acción partiendo de los parámetros asociados a
 			// la solicitud
 			Accion accion = ayudaSol.getAccion();

@@ -5,6 +5,10 @@
     <param-name>URLDataSource</param-name>
     <param-value>java:jboss/datasources/dspr03</param-value>
   </context-param>
+  <context-param>
+    <param-name>acciones</param-name>
+    <param-value>/WEB-INF/classes/pr03/controlador/acciones.properties</param-value>
+  </context-param>
   <servlet>
     <description>Controlador de la aplicación</description>
     <display-name>Controlador</display-name>
